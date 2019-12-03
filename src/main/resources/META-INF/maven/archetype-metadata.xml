@@ -1,0 +1,61 @@
+<archetype-descriptor xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+	name="#{project.artifactId}">
+
+  <requiredProperties>
+    <requiredProperty key="projectName">
+    </requiredProperty>
+    <requiredProperty key="projectDescription">
+    </requiredProperty>
+    <requiredProperty key="gitUri">
+      <defaultValue></defaultValue>
+    </requiredProperty>
+    <requiredProperty key="gitUsername">
+      <defaultValue></defaultValue>
+    </requiredProperty>
+    <requiredProperty key="gitPassword">
+      <defaultValue></defaultValue>
+    </requiredProperty>
+    <requiredProperty key="port">
+      <defaultValue>8001</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+
+  <fileSets>
+
+	<fileSet filtered="true" packaged="false">
+		<directory />
+		<includes>
+			<include>**/readme.txt</include>
+			<include>**/pom.xml</include>
+			<include>**/*.properties</include>
+		</includes>
+	</fileSet>
+
+
+   <fileSet filtered="true" packaged="true" encoding="UTF-8">
+       <directory>src/main/java</directory>
+       <includes>
+      		<include>**/*.java</include>
+	      </includes>
+    </fileSet>
+
+	  <fileSet filtered="true" packaged="false">
+		  <directory>src/main/resources</directory>
+ 	  </fileSet>
+
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+        <directory>src/test/java</directory>
+        <includes>
+            <include>**/*.java</include>
+        </includes>
+    </fileSet>
+
+  	<fileSet filtered="true" packaged="false">
+   		<directory>src/test/resources</directory>
+  	</fileSet>
+
+   </fileSets>
+
+</archetype-descriptor>

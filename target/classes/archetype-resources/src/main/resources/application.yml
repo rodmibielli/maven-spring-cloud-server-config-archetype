@@ -1,0 +1,12 @@
+---
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: $!{gitUri}
+          #username: $!{gitUsername}
+          #password: $!{gitPassword}
+server:
+  port: $!{port}
+

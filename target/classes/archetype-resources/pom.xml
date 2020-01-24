@@ -72,6 +72,10 @@
 				<from>
 				    <image>openjdk</image>
 				</from>
+				<to>
+					<image>${dockerId}/${project.artifactId}:${project.version}</image>
+				</to>
+				<mainClass>${package}.Application</mainClass>
 				<container>
 				    <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
 				</container>

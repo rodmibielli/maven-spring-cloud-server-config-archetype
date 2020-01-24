@@ -6,6 +6,9 @@
   <requiredProperties>
     <requiredProperty key="projectName">
     </requiredProperty>
+    <requiredProperty key="dockerId">
+      <defaultValue></defaultValue>
+    </requiredProperty>
     <requiredProperty key="gitUri">
       <defaultValue></defaultValue>
     </requiredProperty>

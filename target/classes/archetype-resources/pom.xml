@@ -55,6 +55,11 @@
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -75,9 +80,9 @@
 				<to>
 					<image>${dockerId}/${project.artifactId}:${project.version}</image>
 				</to>
-				<mainClass>${package}.Application</mainClass>
 				<container>
 				    <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+					<mainClass>${package}.ConfigServerApplication</mainClass>
 				</container>
 			    </configuration>
 			    <executions>

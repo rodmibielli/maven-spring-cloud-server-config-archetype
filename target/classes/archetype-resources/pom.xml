@@ -63,39 +63,61 @@
 	</dependencies>
 
 	<build>
+		
+		<extensions>
+			<extension>
+			  <groupId>com.spotify</groupId>
+			  <artifactId>dockerfile-maven-extension</artifactId>
+			</extension>
+		</extensions>
+
 		<plugins>
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
-			<plugin>
-			    <groupId>com.google.cloud.tools</groupId>
-			    <artifactId>jib-maven-plugin</artifactId>
-			    <configuration>
-				<from>
-				    <image>openjdk</image>
-				</from>
-				<to>
-					<image>${dockerId}/${project.artifactId}:${project.version}</image>
-				</to>
-				<container>
-				    <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
-					<mainClass>${package}.ConfigServerApplication</mainClass>
-				</container>
-			    </configuration>
-			    <executions>
-				<execution>
-				    <phase>package</phase>
-				    <goals>
-					<goal>dockerBuild</goal>
-				    </goals>
-				</execution>
-			    </executions>
-			</plugin>
-
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>docker</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<defaultGoal>clean package</defaultGoal>
+				<plugins>
+					<plugin>
+						<groupId>com.google.cloud.tools</groupId>
+						<artifactId>jib-maven-plugin</artifactId>
+						<configuration>
+						<from>
+							<image>openjdk</image>
+						</from>
+						<to>
+							<image>${dockerId}/${project.artifactId}:${project.version}</image>
+						</to>
+						<container>
+							<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+							<mainClass>${package}.ConfigServerApplication</mainClass>
+							<ports>
+								<port>${port}</port>
+							</ports>
+						</container>
+						</configuration>
+						<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+							<goal>dockerBuild</goal>
+							</goals>
+						</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>

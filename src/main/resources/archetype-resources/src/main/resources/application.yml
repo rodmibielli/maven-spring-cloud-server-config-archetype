@@ -7,12 +7,12 @@ spring:
      server:
        git:
          uri: $!{gitUri}
-         #username: $!{gitUsername}
-         #password: $!{gitPassword}
+         #username: $!{configUsername}
+         #password: $!{configUsername}
   security:
    path: /**
    user: 
-     name: scott
-     password: tiger
+     name: $!{configUsername}
+     password: $!{configPassword}
       
 

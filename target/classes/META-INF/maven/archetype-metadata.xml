@@ -12,14 +12,14 @@
     <requiredProperty key="gitUri">
       <defaultValue></defaultValue>
     </requiredProperty>
-    <requiredProperty key="gitUsername">
-      <defaultValue>scott</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="gitPassword">
-      <defaultValue>tiger</defaultValue>
-    </requiredProperty>
     <requiredProperty key="port">
       <defaultValue>8888</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="configUsername">
+      <defaultValue>scott</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="configPassword">
+      <defaultValue>tiger</defaultValue>
     </requiredProperty>
   </requiredProperties>
 
